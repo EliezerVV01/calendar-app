@@ -1,27 +1,41 @@
-# CalendarApp
+# Overview
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.2.
+Calendar app is a web application that allows users to add reminders for a specific date, choosing the time and city. It also provides  weather information for each reminder based on the time and city. 
 
-## Development server
+# Features
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+ TODO
 
-## Code scaffolding
+# Project Structure
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Calendar app is built with Angular using the following structure.
 
-## Build
+TODO
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+# Setting Up Project
+## Environment Variables
 
-## Running unit tests
+TODO
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```
+TODO
+```
 
-## Running end-to-end tests
+# Installing Dependencies
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+```
+TODO
+```
 
-## Further help
+# Running Project
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+```
+TODO
+```
+
+# Running unit tests
+
+```
+TODO
+```
+
