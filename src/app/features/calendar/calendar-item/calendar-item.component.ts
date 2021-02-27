@@ -1,5 +1,7 @@
 import { ChangeDetectionStrategy, Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Reminder } from 'src/app/core/models/reminder.model';
+import { ReminderDetailsComponent } from '../reminder-details/reminder-details.component';
 
 @Component({
   selector: 'app-calendar-item',
@@ -18,7 +20,7 @@ export class CalendarItemComponent implements OnInit, OnChanges {
   @Input() reminders: Reminder[] = [];
   public day?: number;
 
-  constructor() {}
+  constructor(private dialog: MatDialog) {}
 
   ngOnInit() {
     this.day = this.date.getDate();
@@ -32,5 +34,9 @@ export class CalendarItemComponent implements OnInit, OnChanges {
 
   private orderByTime (reminders:Reminder[]): Reminder[]{
     return reminders.sort((a: Reminder, b: Reminder) => a.time.localeCompare(b.time))
+  }
+
+  public openReminderDetails(reminder: Reminder){
+    this.dialog.open(ReminderDetailsComponent, {data: reminder});
   }
 }

@@ -1,0 +1,19 @@
+<h2 class="header">
+  {{data.description}}
+</h2>
+<div class="body">
+  <div class="city">{{data.city?.value}}</div>
+  <div class="weather text-capitalize">{{ data.weather}}</div>
+  <div class="date-time">{{data.date | dateFormat: 'MMMM Do YYYY'}}, {{data.time}}</div>
+</div>
+
+<div class="footer row">
+  <div class="col center">
+    <button mat-icon-button  color="primary">Edit</button>
+  </div>
+<div class="col center">
+  <button mat-icon-button  color="warn">
+    <mat-icon>delete_outline</mat-icon>
+  </button>
+</div>
+</div>

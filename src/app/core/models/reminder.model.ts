@@ -1,13 +1,14 @@
 import { AbstractControl, FormGroup } from "@angular/forms";
+import { City } from "./city.model";
 
 export interface ReminderBase {
     description: string,
-    city: string,
+    city: City,
     time: string,
     color: string,
 }
 
-export type Reminder = ReminderBase & {date: string};
+export type Reminder = ReminderBase & {date: string, weather?: string};
 
 export type ReminderForm  = ReminderBase & { date: Date };
 
