@@ -16,7 +16,9 @@ export class ReminderDetailsComponent implements OnInit {
   ngOnInit() { }
 
   public removeReminder() {
-    this.dialogRef.close({ action: ACTION.REMOVE, data: { id: this.data.id } });
+    if(this.data.id){
+      this.dialogRef.close({ action: ACTION.REMOVE, data: { id: this.data.id } });
+    }
   }
 
   public editReminder() {

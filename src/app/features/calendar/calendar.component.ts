@@ -100,7 +100,9 @@ export class CalendarComponent implements OnInit, OnDestroy {
   }
 
   public removeReminder(event: { reminderId: number }) {
-    this.store.dispatch(removeReminder(event));
+    if(event.reminderId){
+      this.store.dispatch(removeReminder(event));
+    }
   }
 
   public updateReminder(reminder: Reminder){

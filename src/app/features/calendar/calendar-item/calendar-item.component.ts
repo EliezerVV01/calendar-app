@@ -20,7 +20,7 @@ export class CalendarItemComponent implements OnInit, OnChanges {
   @Input() isFirstRowItem: boolean = false;
   @Input() disabled: boolean = false;
   @Input() reminders: Reminder[] = [];
-  @Output() deleteReminder = new EventEmitter<{ reminderId?: number }>();
+  @Output() deleteReminder = new EventEmitter<{ reminderId: number }>();
   @Output() updateReminder = new EventEmitter<Reminder>();
   public day?: number;
 
@@ -46,7 +46,7 @@ export class CalendarItemComponent implements OnInit, OnChanges {
         if (data) {
           switch (data.action) {
             case ACTION.REMOVE:
-              this.deleteReminder.emit({ reminderId: data.data.id });
+              if(data.data.id) this.deleteReminder.emit({ reminderId: data.data.id });
               break;
             case ACTION.UPDATE:
               this.openEditReminder(data.data);
