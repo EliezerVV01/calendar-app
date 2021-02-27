@@ -38,13 +38,16 @@ export class ReminderFormComponent implements OnInit {
     this.form.setValue({ ...this.form.value, color });
   }
 
-  public addReminder() {
+  public async addReminder() {
+    const forecasts = await this.weatherService.getWeatherInformation(this.form.value.city);
+    const weather = forecasts?.daily?.filter((weather: any) => new Date(weather.dt * 1000).toDateString() === this.form.value.date?.toDateString())
     const reminder: Reminder = {
       description: this.form.value.description,
       city: this.form.value.city,
       time: this.form.value.time,
       color: this.form.value.color,
       date: new Date(this.form.value.date).toISOString(),
+      weather: weather[0]?.weather[0]?.description,
     }
     this.dialogRef.close(reminder);
   }

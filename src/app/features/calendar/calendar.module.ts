@@ -5,6 +5,7 @@ import { RouterModule } from '@angular/router';
 import { CalendarItemComponent } from './calendar-item/calendar-item.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { ReminderFormComponent } from './reminder-form/reminder-form.component';
+import { ReminderDetailsComponent } from './reminder-details/reminder-details.component';
 
 @NgModule({
   imports: [
@@ -21,6 +22,7 @@ import { ReminderFormComponent } from './reminder-form/reminder-form.component';
     CalendarComponent,
     CalendarItemComponent,
     ReminderFormComponent,
+    ReminderDetailsComponent,
   ],
 })
 export class CalendarModule { }

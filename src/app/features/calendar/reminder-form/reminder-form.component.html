@@ -11,7 +11,7 @@
       </mat-form-field>
       <mat-form-field class="expand">
         <mat-select  name="food" formControlName="city" placeholder="City" ngDefaultControl required>
-          <mat-option *ngFor="let city of cities" [value]="city.value">
+          <mat-option *ngFor="let city of cities" [value]="city">
             {{city.value}}
           </mat-option>
         </mat-select>
