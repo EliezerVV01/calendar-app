@@ -8,7 +8,7 @@ export interface ReminderBase {
     color: string,
 }
 
-export type Reminder = ReminderBase & {date: string, weather?: string};
+export type Reminder = ReminderBase & {date: string, weather?: string, id?: number};
 
 export type ReminderForm  = ReminderBase & { date: Date };
 

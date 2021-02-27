@@ -1,5 +1,6 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { ACTION } from 'src/app/core/constants/dialog.contasts';
 import { Reminder } from 'src/app/core/models/reminder.model';
 
 @Component({
@@ -9,9 +10,17 @@ import { Reminder } from 'src/app/core/models/reminder.model';
 })
 export class ReminderDetailsComponent implements OnInit {
 
+  constructor(@Inject(MAT_DIALOG_DATA) public data: Reminder,
+    private dialogRef: MatDialogRef<ReminderDetailsComponent>) { }
 
-  constructor(@Inject(MAT_DIALOG_DATA) public data: Reminder) { }
+  ngOnInit() { }
 
-  ngOnInit() {}
+  public removeReminder() {
+    this.dialogRef.close({ action: ACTION.REMOVE, data: { id: this.data.id } });
+  }
+
+  public editReminder() {
+    this.dialogRef.close({ action: ACTION.UPDATE, data: this.data });
+  }
 
 }
