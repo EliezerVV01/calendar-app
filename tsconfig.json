@@ -14,7 +14,9 @@
     "experimentalDecorators": true,
     "moduleResolution": "node",
     "importHelpers": true,
+    "resolveJsonModule": true,
     "target": "es2015",
+    "allowSyntheticDefaultImports": true,
     "module": "es2020",
     "lib": [
       "es2018",

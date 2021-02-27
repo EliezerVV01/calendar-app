@@ -1,7 +1,7 @@
 #calendar-item{ 
     height: 100%;
     width: 100%;
-    padding: 0px 15px;
+    padding: 8px 5px 15px;
     min-height: 100px;
     border-right: 1px solid #80808047;
     border-bottom: 1px solid #80808047;
@@ -31,4 +31,13 @@
     border-top: 1px solid #80808047;
 }
 
+.reminder{
+    width: 95% !important;
+    font-size: 12px;
+    color: white;
+}
+
+.reminder:hover{
+    cursor: pointer;
+}
 

@@ -1,4 +1,5 @@
-import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { Reminder } from 'src/app/core/models/reminder.model';
 
 @Component({
   selector: 'app-calendar-item',
@@ -6,7 +7,7 @@ import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core
   styleUrls: ['./calendar-item.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class CalendarItemComponent implements OnInit {
+export class CalendarItemComponent implements OnInit, OnChanges {
 
   @Input() date: Date = new Date();
   @Input() isWeekend: boolean = false;
@@ -14,9 +15,22 @@ export class CalendarItemComponent implements OnInit {
   @Input() isFirstDayOfWeek: boolean = false;
   @Input() isFirstRowItem: boolean = false;
   @Input() disabled: boolean = false;
+  @Input() reminders: Reminder[] = [];
+  public day?: number;
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.day = this.date.getDate();
+  }
 
+  ngOnChanges(changes: SimpleChanges){
+    if(changes.reminders){
+      this.reminders = this.orderByTime(changes.reminders.currentValue);
+    }
+  }
+
+  private orderByTime (reminders:Reminder[]): Reminder[]{
+    return reminders.sort((a: Reminder, b: Reminder) => a.time.localeCompare(b.time))
+  }
 }

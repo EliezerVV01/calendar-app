@@ -1,4 +1,14 @@
-.calendar-header{
+.container{
+    margin-top: 4em;
+}
+
+#calendar-header{
+    text-align: center;
+    padding-bottom: 10px;
+    color: #989898;
+}
+
+.sub-header{
     background-color: #4b9bcb;
     color: white;
     font-weight: 600;
