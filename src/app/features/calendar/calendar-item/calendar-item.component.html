@@ -1,0 +1,8 @@
+<div id="calendar-item"
+  [ngClass]="{'hightlight': isWeekend, 'first-on-row': isFirstDayOfWeek,  'first-row-item': isFirstRowItem}">
+  <div class="calendar-item__header" [ngClass]="{'disabled': disabled}">
+    {{date.getDate()}}
+  </div>
+  <div class="calendar-item__body">
+  </div>
+</div>
