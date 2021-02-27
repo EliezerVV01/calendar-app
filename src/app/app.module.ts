@@ -5,6 +5,9 @@ import { CoreModule } from './core/core.module';
 import { RouterModule, Routes } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { HttpClientModule } from '@angular/common/http';
+import { StoreModule } from '@ngrx/store';
+import { metaReducers } from './store';
+import { reducers } from './store';
 
 const routes: Routes = [
   {
@@ -22,6 +25,7 @@ const routes: Routes = [
     CoreModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    StoreModule.forRoot(reducers, { metaReducers }),
     RouterModule.forRoot(routes),
   ],
   providers: [],

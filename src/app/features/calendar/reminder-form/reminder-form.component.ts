@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component, EventEmitter, Inject, OnInit, Outpu
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { City } from 'src/app/core/models/city.model';
-import { Reminder, ReminderControls, ReminderGroupForm } from 'src/app/core/models/reminder.model';
+import {  Reminder, ReminderControls, ReminderGroupForm } from 'src/app/core/models/reminder.model';
 import { WeatherService } from 'src/app/core/services/weather.service';
 
 @Component({
@@ -22,7 +22,7 @@ export class ReminderFormComponent implements OnInit {
     this.colors = ['#6AFF9A', '#6AFFF5', '#6A77FF', '#FF6AA0', '#BFBFBF'];
     this.cities = this.weatherService.citiesList;
     this.form = new FormGroup({
-      description: new FormControl('', [Validators.required, Validators.maxLength(50)]),
+      description: new FormControl('', [Validators.required, Validators.maxLength(30)]),
       city: new FormControl('', [Validators.required]),
       time: new FormControl('', [Validators.required]),
       color: new FormControl(this.colors[0]),
@@ -39,6 +39,13 @@ export class ReminderFormComponent implements OnInit {
   }
 
   public addReminder() {
-    this.dialogRef.close({...this.form.value});
+    const reminder: Reminder = {
+      description: this.form.value.description,
+      city: this.form.value.city,
+      time: this.form.value.time,
+      color: this.form.value.color,
+      date: new Date(this.form.value.date).toISOString(),
+    }
+    this.dialogRef.close(reminder);
   }
 }

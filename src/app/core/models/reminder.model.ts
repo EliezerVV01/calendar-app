@@ -1,13 +1,16 @@
 import { AbstractControl, FormGroup } from "@angular/forms";
 
-export interface Reminder {
+export interface ReminderBase {
     description: string,
     city: string,
     time: string,
     color: string,
-    date: Date,
 }
 
-export type ReminderControls = { [key in keyof Reminder]: AbstractControl }
+export type Reminder = ReminderBase & {date: string};
 
-export type ReminderGroupForm = FormGroup & { value: Reminder, controls: ReminderControls }
+export type ReminderForm  = ReminderBase & { date: Date };
+
+export type ReminderControls = { [key in keyof ReminderForm]: AbstractControl }
+
+export type ReminderGroupForm = FormGroup & { value: ReminderForm, controls: ReminderControls }

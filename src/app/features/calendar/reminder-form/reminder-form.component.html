@@ -4,14 +4,13 @@
       {{ data.date | dateFormat: 'dddd Do'}}
     </div>
     <div class="body">
-      <mat-form-field hintLabel="Max 50 characters" class="expand description" formControlName="description" ngDefaultControl>
+      <mat-form-field hintLabel="Max 30 characters" class="expand description" formControlName="description" ngDefaultControl>
         <mat-label>Reminder description</mat-label>
-        <input type="text" matInput placeholder="Ex. Business meeting with..." autocomplete="off" maxlength="50"/>
-        <mat-hint align="end">{{form.value.description?.length || 0}}/50</mat-hint>
+        <input type="text" matInput placeholder="Ex. Business meeting with..." autocomplete="off" maxlength="30"/>
+        <mat-hint align="end">{{form.value.description?.length || 0}}/30</mat-hint>
       </mat-form-field>
       <mat-form-field class="expand">
-        <mat-label>City</mat-label>
-        <mat-select  name="food" formControlName="city" ngDefaultControl>
+        <mat-select  name="food" formControlName="city" placeholder="City" ngDefaultControl required>
           <mat-option *ngFor="let city of cities" [value]="city.value">
             {{city.value}}
           </mat-option>
@@ -19,7 +18,7 @@
       </mat-form-field>
       <input type="time" formControlName="time" class="expand time-picker">
       <div class="color-picker">
-        <mat-chip-list aria-label="Fish selection">
+        <mat-chip-list aria-label="Color Picker">
           <mat-chip *ngFor="let color of colors" class="color-chip" [ngClass]="{'selected': form.value.color === color}"
            [ngStyle]="{'background-color': color}" (click)="changeColor(color)"> 
           </mat-chip>

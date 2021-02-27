@@ -10,8 +10,8 @@
     </div>
     <div *ngFor="let week of calendarMonth; let i = index" class="row">
       <div *ngFor="let day of week; let j = index" class="col calendar-col">
-        <app-calendar-item [date]="day" [isWeekend]="isWeekend(day)" [isFirstRowItem]="i === 0" [isFirstDayOfWeek]="j === 0" 
-         [disabled]="!isPartOfMonth(day)" (click)="openReminderForm(day)">
+        <app-calendar-item [date]="day.date" [isWeekend]="day.isWeekend" [isFirstRowItem]="i === 0" [isFirstDayOfWeek]="j === 0" 
+         [disabled]="!day.isPartOfMonth" [reminders]="day.reminders" (click)="openReminderForm(day.date)">
         </app-calendar-item>
       </div>
     </div>
