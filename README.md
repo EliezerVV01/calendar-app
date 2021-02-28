@@ -50,7 +50,7 @@ app.module.ts
 # Setting Up Project
 ## Environment Variables
 
-In order to run this project correctly, you need to create a folder called 'environments' under `src` and add a file `enviroment.ts` with the following content. If the apiKey is not working, please create an account at [openweather]('https://home.openweathermap.org/users/sign_up') then look under the [API KEY tab]('https://home.openweathermap.org/api_keys')
+In order to run this project correctly, you need to create a folder called 'environments' under `src` and add a file `environment.ts` with the following content. If the apiKey is not working, please create an account at [openweather]('https://home.openweathermap.org/users/sign_up') then look under the [API KEY tab]('https://home.openweathermap.org/api_keys')
 
 ```
 export const environment = {
