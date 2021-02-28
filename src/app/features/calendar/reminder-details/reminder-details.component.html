@@ -9,10 +9,10 @@
 
 <div class="footer row">
   <div class="col center">
-    <button mat-icon-button  color="primary">Edit</button>
+    <button mat-icon-button  color="primary" (click)="editReminder()">Edit</button>
   </div>
 <div class="col center">
-  <button mat-icon-button  color="warn">
+  <button mat-icon-button  color="warn" (click)="removeReminder()">
     <mat-icon>delete_outline</mat-icon>
   </button>
 </div>
