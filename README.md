@@ -29,17 +29,17 @@ app\
         services *
         utils *
         core.module.ts
-    features >
-        calendar >
+    features \
+        calendar \
             calendar-item *
             reminder-details *
             reminder-form *
         calendar.components.ts|html|scss
         calendar.module.ts
-    shared >
+    shared \
         pipes *
     shared.module.ts
-    store >
+    store \
         index.ts
         rehydration.ts
         reminders.store.ts
