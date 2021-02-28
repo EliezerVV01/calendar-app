@@ -20,6 +20,7 @@ Calendar app is a web application that allows users to add reminders for a speci
 
 Calendar app is built with Angular using the following structure. Open folders are represented by `\` and close by `*`.
 
+```
 app\
     core\
         components *
@@ -44,6 +45,7 @@ app\
         reminders.store.ts
 app.component.ts|scss|html
 app.module.ts
+```
 
 # Setting Up Project
 ## Environment Variables
