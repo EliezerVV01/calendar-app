@@ -1,0 +1,20 @@
+<div class="container">
+  <div id="calendar-header">
+    <h2>{{selectedDate | dateFormat: 'MMMM YYYY'}}</h2>
+  </div>
+  <div class="container-fluid">
+    <div class="row sub-header">
+      <div class="col" *ngFor="let day of daysOfWeek">
+        {{day}}
+      </div>
+    </div>
+    <div *ngFor="let week of calendarMonth; let i = index" class="row">
+      <div *ngFor="let day of week; let j = index" class="col calendar-col">
+        <app-calendar-item [date]="day.date" [isWeekend]="day.isWeekend" [isFirstRowItem]="i === 0" [isFirstDayOfWeek]="j === 0" 
+         [disabled]="!day.isPartOfMonth" [reminders]="day.reminders" (click)="openReminderForm(day.date)" 
+         (deleteReminder)="removeReminder($event)" (updateReminder)="updateReminder($event)">
+        </app-calendar-item>
+      </div>
+    </div>
+  </div>
+</div>

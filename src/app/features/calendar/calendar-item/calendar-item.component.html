@@ -1,0 +1,14 @@
+<div id="calendar-item"
+  [ngClass]="{'hightlight': isWeekend, 'first-on-row': isFirstDayOfWeek,  'first-row-item': isFirstRowItem}">
+  <div class="calendar-item__header" [ngClass]="{'disabled': disabled}">
+    {{day}}
+  </div>
+  <div class="calendar-item__body">
+    <mat-chip-list aria-label="Reminders" class="mat-chip-list-stacked">
+      <mat-chip *ngFor="let reminder of reminders" class="reminder" [ngStyle]="{'background-color': reminder.color}"
+        (click)="openReminderDetails(reminder)">
+        {{reminder.description}}
+      </mat-chip>
+    </mat-chip-list>
+  </div>
+</div>
