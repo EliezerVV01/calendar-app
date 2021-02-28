@@ -1,4 +1,4 @@
-import { ActionReducer, INIT, MetaReducer } from "@ngrx/store";
+import { ActionReducer, INIT } from "@ngrx/store";
 import { AppState } from ".";
 
 export const hydrationMetaReducer = (
