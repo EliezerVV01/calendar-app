@@ -46,6 +46,8 @@ export class AppPage {
   }
 
   async check(){
+    const items = await $$('#calendar-item');
+    this.calendarItem = await items[items.length - 5];
     const reminder = await this.calendarItem.$('.mat-chip > div');
     const reminderText = await reminder.getText();
     expect(reminderText).toEqual('Important meeting with CEO');
