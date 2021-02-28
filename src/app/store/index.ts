@@ -1,6 +1,6 @@
 import { ActionReducerMap, MetaReducer } from "@ngrx/store";
-import { Reminder, ReminderBase } from "../core/models/reminder.model";
-import { hydrationMetaReducer } from "./rehydratation.reducer";
+import { Reminder } from "../core/models/reminder.model";
+import { hydrationMetaReducer } from "./rehydration";
 import { remindersReducer } from "./reminders.store";
 
 export interface AppState {
